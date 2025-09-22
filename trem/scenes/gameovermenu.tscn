@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfnd3aes6bh7v"]
+
+[ext_resource type="FontFile" uid="uid://m7q8dff4fmlm" path="res://assets/MaldiniBold.ttf" id="1_de6a8"]
+[ext_resource type="Script" uid="uid://bwlhfjyo24i5r" path="res://scenes/gameovermenu.gd" id="1_myhex"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myhex"]
+bg_color = Color(0.03529412, 0.6313726, 0.96862745, 1)
+shadow_color = Color(0, 0, 0, 0.49411765)
+shadow_size = 5
+shadow_offset = Vector2(10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pc6j6"]
+bg_color = Color(0.0022897723, 0.34507114, 0.54329884, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvg73"]
+bg_color = Color(0.0008035188, 0.20511106, 0.3339958, 1)
+
+[node name="gameovermenu" type="CanvasLayer"]
+script = ExtResource("1_myhex")
+
+[node name="gameoverPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -125.0
+offset_right = 200.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_myhex")
+
+[node name="resultLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.5
+offset_top = -84.0
+offset_right = 135.5
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_de6a8")
+theme_override_font_sizes/font_size = 60
+text = "GAME OVER!"
+
+[node name="restartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 15.0
+offset_right = 126.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_de6a8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pc6j6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cvg73")
+text = "Play again"
+
+[connection signal="pressed" from="restartButton" to="." method="_on_restart_button_pressed"]

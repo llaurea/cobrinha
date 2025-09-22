@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7jxi4jc10jvs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ftjp"]
+bg_color = Color(0.70144755, 0.5062932, 0.8254699, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8721274, 0.7424698, 0.95431215, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="cobra" type="Panel" groups=["segments"]]
+offset_right = 50.0
+offset_bottom = 50.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ftjp")

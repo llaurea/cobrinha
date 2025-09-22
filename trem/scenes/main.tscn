@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://v3fe1mv87wf3"]
+
+[ext_resource type="Script" uid="uid://bi2yn7j4gsych" path="res://scripts/main.gd" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://c7jxi4jc10jvs" path="res://scenes/cobra.tscn" id="2_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://c0g8avlvlf1nb" path="res://assets/bg.png" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bsvstknsu3g43" path="res://scenes/hud.tscn" id="3_sugp2"]
+[ext_resource type="Texture2D" uid="uid://1gqsn0w8ct2b" path="res://assets/icon.svg" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://cfnd3aes6bh7v" path="res://scenes/gameovermenu.tscn" id="6_tefeu"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_0wfyh")
+cobra_scene = ExtResource("2_jyhfs")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(500, 550)
+texture = ExtResource("2_sugp2")
+
+[node name="HUD" parent="." instance=ExtResource("3_sugp2")]
+
+[node name="MoveTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="food" type="Sprite2D" parent="."]
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("5_tbgi4")
+offset = Vector2(81, 81)
+
+[node name="gameovermenu" parent="." instance=ExtResource("6_tefeu")]
+process_mode = 2
+
+[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
+[connection signal="restart" from="gameovermenu" to="." method="_on_gameovermenu_restart"]
