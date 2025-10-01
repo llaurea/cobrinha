@@ -1,14 +1,14 @@
-# trem expresso
+# cobrinha
 
 ## descrição
-trem expresso é uma variação do jogo da cobrinha onde o jogador controla um trem que vai coletando passageiros espalhados pelo mapa. cada passageiro coletado aumenta o comprimento do trem; o objetivo é coletar o máximo possível sem colidir consigo mesmo ou com as bordas do cenário.
+o jogo da cobrinha é um clássico onde o jogador controla uma cobra que deve coletar comida espalhada pelo mapa. A cada item coletado, a cobra cresce em comprimento. O objetivo é sobreviver o máximo possível sem bater nas paredes ou em si mesma.
 
 ## como jogar
 - controles:
-  - teclas de seta ← → ↑ ↓ para mudar a direção do trem.
+  - teclas de seta ← → ↑ ↓ para mudar a direção da cobra.
 - regras básicas:
-  - o trem se movimenta continuamente.
-  - ao coletar um passageiro, o trem aumenta de comprimento.
-  - colidir com qualquer parte do próprio trem ou com as bordas é uma derrota.
+  - a cobra se movimenta continuamente.
+  - ao coletar uma comida, a cobra aumenta de comprimento.
+  - colidir com qualquer parte da própria cobra ou com as bordas é uma derrota.
 - objetivo:
-  - obter a maior pontuação possível coletando passageiros.
+  - obter a maior pontuação possível coletando comida.
