@@ -57,7 +57,7 @@ func add_segment(pos):
 	add_child(cobra)
 	snake.append(cobra)
 
-func _process(delta):
+func _process(_delta):
 	move_snake()
 
 func move_snake():
@@ -98,7 +98,7 @@ func _on_move_timer_timeout():
 		#mexer os pedaçõs um pra frente
 		if i > 0:
 			snake_data[i] = old_data[i - 1]
-		snake[i].position = snake_data[i] * cell_size + Vector2(0, cell_size)
+		snake[i].position = snake_data[i] * cell_size
 	check_out_of_bounds()
 	check_self_eaten()
 	check_food_eaten()
@@ -119,7 +119,7 @@ func move_food():
 		for i in snake_data:
 			if food_pos == i:
 				regen_food = true
-	$food.position = (food_pos * cell_size)+ Vector2(0, cell_size)
+	$food.position = (food_pos * cell_size) + Vector2(cell_size / 2, cell_size / 2)
 	regen_food = true
 
 func check_food_eaten():
